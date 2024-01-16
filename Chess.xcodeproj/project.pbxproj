@@ -14,6 +14,10 @@
 		0028E4782B56D7DA00C9880B /* ImageBasedLighting.skybox in Resources */ = {isa = PBXBuildFile; fileRef = 0028E4772B56D7DA00C9880B /* ImageBasedLighting.skybox */; };
 		0028E47A2B56D7DC00C9880B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0028E4792B56D7DC00C9880B /* Assets.xcassets */; };
 		0028E47D2B56D7DC00C9880B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0028E47C2B56D7DC00C9880B /* Preview Assets.xcassets */; };
+		0028E4862B56DAF200C9880B /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0028E4852B56DAF200C9880B /* BoardView.swift */; };
+		0028E48D2B56DBB600C9880B /* SquareModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0028E48C2B56DBB600C9880B /* SquareModel.swift */; };
+		0028E48F2B56E5B400C9880B /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0028E48E2B56E5B400C9880B /* SquareView.swift */; };
+		0028E4912B56E97900C9880B /* BoardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0028E4902B56E97900C9880B /* BoardModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		0028E4792B56D7DC00C9880B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0028E47C2B56D7DC00C9880B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0028E47E2B56D7DC00C9880B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0028E4852B56DAF200C9880B /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
+		0028E48C2B56DBB600C9880B /* SquareModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareModel.swift; sourceTree = "<group>"; };
+		0028E48E2B56E5B400C9880B /* SquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
+		0028E4902B56E97900C9880B /* BoardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +68,8 @@
 		0028E46C2B56D7DA00C9880B /* Chess */ = {
 			isa = PBXGroup;
 			children = (
+				0028E48B2B56DBA900C9880B /* Models */,
+				0028E4842B56DADD00C9880B /* Modules */,
 				0028E4712B56D7DA00C9880B /* ChessApp.swift */,
 				0028E4732B56D7DA00C9880B /* ContentView.swift */,
 				0028E4752B56D7DA00C9880B /* ImmersiveView.swift */,
@@ -85,6 +95,24 @@
 				0028E47C2B56D7DC00C9880B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0028E4842B56DADD00C9880B /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				0028E4852B56DAF200C9880B /* BoardView.swift */,
+				0028E48E2B56E5B400C9880B /* SquareView.swift */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		0028E48B2B56DBA900C9880B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0028E48C2B56DBB600C9880B /* SquareModel.swift */,
+				0028E4902B56E97900C9880B /* BoardModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,8 +189,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0028E48F2B56E5B400C9880B /* SquareView.swift in Sources */,
+				0028E4912B56E97900C9880B /* BoardModel.swift in Sources */,
+				0028E48D2B56DBB600C9880B /* SquareModel.swift in Sources */,
 				0028E4742B56D7DA00C9880B /* ContentView.swift in Sources */,
 				0028E4722B56D7DA00C9880B /* ChessApp.swift in Sources */,
+				0028E4862B56DAF200C9880B /* BoardView.swift in Sources */,
 				0028E4762B56D7DA00C9880B /* ImmersiveView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

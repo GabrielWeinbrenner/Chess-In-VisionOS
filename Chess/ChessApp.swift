@@ -14,8 +14,8 @@ struct ChessApp: App {
             ContentView()
         }
 
-        ImmersiveSpace(id: "ImmersiveSpace") {
-            ImmersiveView()
-        }.immersionStyle(selection: .constant(.full), in: .full)
+//        ImmersiveSpace(id: "ImmersiveSpace") {
+//            ImmersiveView()
+//        }.immersionStyle(selection: .constant(.full), in: .full)
     }
 }
