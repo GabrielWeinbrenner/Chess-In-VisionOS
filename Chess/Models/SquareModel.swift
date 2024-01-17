@@ -34,9 +34,9 @@ class SquareModel: Identifiable, Equatable, ObservableObject {
     func hasPiece() -> Bool {
         if (self.chessPiece == nil) {  return false } else { return true }
     }
-    func hasOpponentPiece(color: PlayerColor) -> Bool {
+    func hasOpponentPiece(currentPlayerColor: PlayerColor) -> Bool {
         if !hasPiece() { return false }
-        if self.chessPiece?.color == color { return false }
+        if self.chessPiece?.color == currentPlayerColor { return false }
         return true
     }
     func toString() -> String {

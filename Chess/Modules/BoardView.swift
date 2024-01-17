@@ -14,7 +14,6 @@ class SelectionModel: ObservableObject {
     
     func select(squareModel: SquareModel) {
         if ( firstSelection == nil ) {
-            self.firstSelection = squareModel
             if let chessPiece = squareModel.chessPiece {
                 if chessPiece.color != boardModel.currentPlayer {
                     return
@@ -22,10 +21,11 @@ class SelectionModel: ObservableObject {
                 for squarePiece in chessPiece.validMoves(boardModel: self.boardModel) {
                     squarePiece.setAvailableMove(toggle: true)
                 }
+                self.firstSelection = squareModel
             }
         } else if ( secondSelection == nil) {
             self.secondSelection = squareModel
-            var chessPiece = firstSelection?.chessPiece
+            let chessPiece = firstSelection?.chessPiece
             if let validMoves = chessPiece?.validMoves(boardModel: self.boardModel)  {
                 for squarePiece in validMoves{
                     squarePiece.setAvailableMove(toggle: false)

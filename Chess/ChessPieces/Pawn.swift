@@ -43,14 +43,14 @@ class Pawn: ChessPiece {
             let rightUpCol = rowCol.col - 1
             let rightUpRow = rowCol.row + direction
             if rightUpCol >= 0, rightUpRow >= 0, rightUpRow < boardModel.board.count,
-               let rightUp = boardModel.board[rightUpRow][rightUpCol], rightUp.hasOpponentPiece(color: color) {
+               let rightUp = boardModel.board[rightUpRow][rightUpCol], rightUp.hasOpponentPiece(currentPlayerColor: color) {
                 moves.append(rightUp)
             }
 
             let leftUpCol = rowCol.col + 1
             let leftUpRow = rowCol.row + direction
             if leftUpCol < boardModel.board[rowCol.row].count, leftUpRow >= 0, leftUpRow < boardModel.board.count,
-               let leftUp = boardModel.board[leftUpRow][leftUpCol], leftUp.hasOpponentPiece(color: color) {
+               let leftUp = boardModel.board[leftUpRow][leftUpCol], leftUp.hasOpponentPiece(currentPlayerColor: color) {
                 moves.append(leftUp)
             }
 
