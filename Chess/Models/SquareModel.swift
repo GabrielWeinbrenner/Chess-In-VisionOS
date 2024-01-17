@@ -6,35 +6,7 @@
 //
 
 import Foundation
-class ChessPiece: Equatable {
-    static func == (lhs: ChessPiece, rhs: ChessPiece) -> Bool {
-        return (lhs.color == rhs.color) && (rhs.type == lhs.type)
-    }
-    
-    enum Piece {
-        case pawn, rook, bishop, knight, king, queen
-    }
-    let color: PlayerColor
-    let type: Piece
-    
-    func toString() -> String {
-        switch type {
-            case .bishop: "B"
-            case .king: "K"
-            case .knight: "N"
-            case .pawn: "p"
-            case .queen: "Q"
-            case .rook: "R"
-        }
-    }
-    init(color: PlayerColor, type: Piece) {
-        self.color = color
-        self.type = type
-    }
-    
-    
-}
-class SquareModel: Identifiable, Equatable {
+class SquareModel: Identifiable, Equatable, ObservableObject {
     static func == (lhs: SquareModel, rhs: SquareModel) -> Bool {
         return (lhs.file == rhs.file) && (lhs.rank == rhs.rank)
     }
@@ -42,22 +14,37 @@ class SquareModel: Identifiable, Equatable {
     let id: UUID = UUID()
     let rank: String // rows 1...8
     let file: String // files a..h
-    let chessPiece: ChessPiece?
-    
+    @Published var chessPiece: (any ChessPiece)?
+    @Published var availableMove: Bool = false
     enum SquareColor {
         case black, white
     }
     let color: SquareColor
     
-    init(file: String, rank: String, chessPiece: ChessPiece?, color: SquareColor) {
+    init(file: String, rank: String, chessPiece: (any ChessPiece)?, color: SquareColor) {
         self.rank = rank
         self.file = file
         self.chessPiece = chessPiece
         self.color = color
     }
     
+    func setPiece(piece: (any ChessPiece)?) {
+        self.chessPiece = piece
+    }
+    func hasPiece() -> Bool {
+        if (self.chessPiece == nil) {  return false } else { return true }
+    }
+    func hasOpponentPiece(color: PlayerColor) -> Bool {
+        if !hasPiece() { return false }
+        if self.chessPiece?.color == color { return false }
+        return true
+    }
     func toString() -> String {
         return "(\(self.file), \(self.rank)) has a \(self.chessPiece?.toString() ?? "None") piece"
+    }
+    
+    func setAvailableMove(toggle: Bool) {
+        self.availableMove = toggle
     }
     
 //    func displaySquare() -> View {
