@@ -6,11 +6,13 @@
 //
 
 import Foundation
+import SwiftUI
+import UniformTypeIdentifiers
 
 enum PlayerColor {
     case black, white
 }
-extension PlayerColor {
+extension PlayerColor: Codable {
     func toString() -> String {
         switch self {
         case .black:
@@ -21,12 +23,108 @@ extension PlayerColor {
     }
 }
 
-struct Player {
+struct Player: Codable {
     var playerColor: PlayerColor
     var chessPieces: [any ChessPiece]
+    enum CodingKeys: CodingKey {
+        case playerColor, chessPieces
+    }
     
+    init(playerColor: PlayerColor, chessPieces: [any ChessPiece]) {
+        self.playerColor = playerColor
+        self.chessPieces = chessPieces
+    }
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(playerColor, forKey: .playerColor)
+
+        var chessPiecesContainer = container.nestedUnkeyedContainer(forKey: .chessPieces)
+        for piece in chessPieces {
+            switch piece.pieceType {
+            case .pawn:
+                try chessPiecesContainer.encode(piece as? Pawn)
+            case .knight:
+                try chessPiecesContainer.encode(piece as? Knight)
+            case .bishop:
+                try chessPiecesContainer.encode(piece as? Bishop)
+            case .rook:
+                try chessPiecesContainer.encode(piece as? Rook)
+            case .king:
+                try chessPiecesContainer.encode(piece as? King)
+            case .queen:
+                try chessPiecesContainer.encode(piece as? Queen)
+            }
+        }
+    }
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        playerColor = try container.decode(PlayerColor.self, forKey: .playerColor)
+
+        var chessPiecesArray: [any ChessPiece] = []
+        var chessPiecesContainer = try container.nestedUnkeyedContainer(forKey: .chessPieces)
+        while !chessPiecesContainer.isAtEnd {
+            if let pawn = try? chessPiecesContainer.decode(Pawn.self) {
+                chessPiecesArray.append(pawn)
+            }
+            if let knight = try? chessPiecesContainer.decode(Knight.self) {
+                chessPiecesArray.append(knight)
+            }
+            if let bishop = try? chessPiecesContainer.decode(Bishop.self) {
+                chessPiecesArray.append(bishop)
+            }
+            if let rook = try? chessPiecesContainer.decode(Rook.self) {
+                chessPiecesArray.append(rook)
+            }
+            if let king = try? chessPiecesContainer.decode(King.self) {
+                chessPiecesArray.append(king)
+            }
+            if let queen = try? chessPiecesContainer.decode(Queen.self) {
+                chessPiecesArray.append(queen)
+            }
+        }
+        self.chessPieces = chessPiecesArray
+    }
+
 }
-class BoardModel: ObservableObject {
+class BoardModel: ObservableObject, Codable, Identifiable, Observable  {
+    
+    var id: UUID = UUID()
+    var board: [[SquareModel?]]
+    @Published var currentPlayer: PlayerColor
+    var playerOne: Player
+    var playerTwo: Player
+    @Published var gameFinished: Bool = false
+    enum CodingKeys: CodingKey {
+        case id, board, currentPlayer, playerOne, playerTwo, gameFinished
+    }
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .id)
+        try container.encode(board, forKey: .board)
+        try container.encode(currentPlayer, forKey: .currentPlayer)
+        try container.encode(playerOne, forKey: .playerOne)
+        try container.encode(playerTwo, forKey: .playerTwo)
+        try container.encode(gameFinished, forKey: .gameFinished)
+    }
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decode(UUID.self, forKey: .id)
+        board = try container.decode([[SquareModel?]].self, forKey: .board)
+        currentPlayer = try container.decode(PlayerColor.self, forKey: .currentPlayer)
+        playerOne = try container.decode(Player.self, forKey: .playerOne)
+        playerTwo = try container.decode(Player.self, forKey: .playerTwo)
+        gameFinished = try container.decode(Bool.self, forKey: .gameFinished)
+    }
+
+
+    init() {
+        self.board = Array(repeating: Array(repeating: nil, count: 8), count: 8)
+        self.playerOne = Player(playerColor: .white, chessPieces: [])
+        self.playerTwo = Player(playerColor: .black, chessPieces: [])
+        self.currentPlayer = .white
+        initializeBoard()
+    }
+
     func initialColPieceType(col: Int, color: PlayerColor, file: String, rank: String) -> (any ChessPiece){
         switch col {
         case 0, 7:
@@ -42,6 +140,21 @@ class BoardModel: ObservableObject {
         default:
             fatalError("Invalid Column")
         }
+    }
+    
+    func getKings() -> [King] {
+        var kings: [King] = []
+        for piece in playerOne.chessPieces {
+            if let king = piece as? King {
+                kings.append(king)
+            }
+        }
+        for piece in playerTwo.chessPieces {
+            if let king = piece as? King {
+                kings.append(king)
+            }
+        }
+        return kings
     }
     func fileRankConvert(col: Int, row: Int) -> (file: String, rank: String, color: SquareModel.SquareColor, chessPiece: (any ChessPiece)?){
         let files = ["a", "b", "c", "d", "e", "f", "g", "h"]
@@ -82,12 +195,16 @@ class BoardModel: ObservableObject {
             }
         }
     }
-   
     func movePiece(firstSpot: SquareModel, secondSpot: SquareModel) -> Bool {
         if let movedPiece = firstSpot.chessPiece {
             if movedPiece.color == currentPlayer && movedPiece.movePiece(firstSpot: firstSpot, secondSpot: secondSpot, boardModel: self) {
                 firstSpot.setPiece(piece: nil)
                 secondSpot.setPiece(piece: movedPiece)
+                for king in getKings() {
+                    if king.checkmated(boardModel: self) {
+                        gameFinished = true
+                    }
+                }
                 changePlayer()
                 return true
             } else {
@@ -132,15 +249,42 @@ class BoardModel: ObservableObject {
         return nil
     }
     
-    var board: [[SquareModel?]]
-    @Published var currentPlayer: PlayerColor
-    var playerOne: Player
-    var playerTwo: Player
-    init() {
-        self.board = Array(repeating: Array(repeating: nil, count: 8), count: 8)
-        self.playerOne = Player(playerColor: .white, chessPieces: [])
-        self.playerTwo = Player(playerColor: .black, chessPieces: [])
-        self.currentPlayer = .white
-        initializeBoard()
+    
+}
+
+extension BoardModel {
+    func toString() -> String {
+        print("\(self.id)")
+        var boardString = ""
+        for row in 0..<8 {
+            for col in 0..<8 {
+                if let square = board[row][col], let chessPiece = square.chessPiece {
+                    boardString += chessPiece.toString() + " "
+                } else {
+                    boardString += "---- "
+                }
+            }
+            boardString += "\n"
+        }
+        return boardString
     }
+}
+
+extension BoardModel: Hashable {
+    static func == (lhs: BoardModel, rhs: BoardModel) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+}
+
+extension BoardModel: Transferable {
+    static var transferRepresentation: some TransferRepresentation {
+        CodableRepresentation(contentType: .BoardModel)
+    }
+}
+extension UTType {
+    static var BoardModel: UTType { UTType(exportedAs: "com.gabrielweinbrenner.BoardModel") }
 }

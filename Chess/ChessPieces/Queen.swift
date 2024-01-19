@@ -9,7 +9,8 @@ import Foundation
 
 class Queen: ChessPiece {
     var color: PlayerColor
-    
+    var pieceType: ChessPieceType = .queen
+
     var file: String?
     
     var rank: String?

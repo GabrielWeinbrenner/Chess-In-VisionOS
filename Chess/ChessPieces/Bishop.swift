@@ -9,7 +9,8 @@ import Foundation
 
 class Bishop: ChessPiece {
     var color: PlayerColor
-    
+    var pieceType: ChessPieceType = .bishop
+
     var file: String?
     
     var rank: String?

@@ -8,7 +8,8 @@
 import Foundation
 
 class Rook: ChessPiece {
-    
+    var pieceType: ChessPieceType = .rook
+
     var color: PlayerColor
     
     var file: String?

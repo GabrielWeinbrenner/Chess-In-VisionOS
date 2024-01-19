@@ -10,7 +10,8 @@ import SwiftUI
 let BLACK_SQUARE: Color = Color(red: CGFloat(118.0/255.0), green: CGFloat(150.0/255.0), blue: CGFloat(86.0/255.0))
 let WHITE_SQUARE: Color = Color(red: CGFloat(238.0/255.0), green: CGFloat(238.0/255.0), blue: CGFloat(210.0/255.0))
 struct SquareView: View {
-    @ObservedObject var squareModel: SquareModel
+    var squareModel: SquareModel
+    var boardModel: BoardModel
     @ObservedObject var selectionModel: SelectionModel
     var body: some View {
         return ZStack {
@@ -24,10 +25,7 @@ struct SquareView: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 60, height: 60, alignment: .center)
                     .clipped()
-//                Text(chessPiece.toString())
-//                    .foregroundStyle(Color.black)
             }
-            
             if squareModel.availableMove {
                 Image(systemName: "circle.fill")
                     .font(.system(size: 40, weight: .light))
@@ -36,14 +34,14 @@ struct SquareView: View {
             }
         }.onTapGesture(perform: {
             print("\(squareModel.toString())")
-            selectionModel.select(squareModel: squareModel)
+            selectionModel.select(squareModel: squareModel, boardModel: boardModel)
         })
     }
 }
 
-var squareModel = SquareModel(file: "e", rank: "8", chessPiece: Pawn(file: "e", rank: "8", color: PlayerColor.black), color: SquareModel.SquareColor.black)
-var boardModel = BoardModel()
-var selectionModel = SelectionModel(boardModel: boardModel)
-#Preview {
-    SquareView(squareModel: squareModel, selectionModel: selectionModel)
-}
+//var squareModel = SquareModel(file: "e", rank: "8", chessPiece: Pawn(file: "e", rank: "8", color: PlayerColor.black), color: SquareModel.SquareColor.black)
+//var boardModel = BoardModel()
+//var selectionModel = SelectionModel(boardModel: boardModel)
+//#Preview {
+//    SquareView(squareModel: squareModel, selectionModel: selectionModel)
+//}

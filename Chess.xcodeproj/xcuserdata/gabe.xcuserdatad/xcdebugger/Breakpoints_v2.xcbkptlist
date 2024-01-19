@@ -3,4 +3,308 @@
    uuid = "32D2C516-AAC9-41AF-BD8A-32BF3491CB48"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BB8AB6D9-2568-4E9F-9D45-E4B1E16E7F2F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Chess/ChessPieces/King.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "isThreatenedDiagonally(boardModel:row:col:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "49BB4301-F4AF-40C9-9246-D498CA5A684E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Chess/ChessPieces/King.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
+            landmarkName = "checkmated(boardModel:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FE4EC495-429E-46B9-920B-3F5EF2CA0D4B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Chess/ChessPieces/King.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "isChecked(row:col:boardModel:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ACA57EFB-4BAF-4181-B326-D753460FC2DD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Chess/ChessPieces/King.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "isThreatenedByRowCol(boardModel:row:col:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "029B22FC-65A0-432F-A907-C242A3C1EA3F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Chess/ChessPieces/King.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "isThreatenedByRowCol(boardModel:row:col:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4236C334-DEB3-43D2-8CD4-95282018BEAA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Chess/ChessPieces/King.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "isThreatenedByRowCol(boardModel:row:col:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1FCE1DFC-E166-4D37-A323-CBADF59B2773"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Chess/ChessPieces/King.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "isThreatenedByRowCol(boardModel:row:col:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "70D31C91-6468-4D81-9503-580B74D16971"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Chess/ChessPieces/King.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "isThreatenedDiagonally(boardModel:row:col:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A420C2AC-1B11-46AB-B264-B9CB9B2DEAA5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Chess/ChessPieces/King.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "isThreatenedDiagonally(boardModel:row:col:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C1A8BF3D-1BEC-4733-ABCF-70829B3C3CAC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Chess/ChessPieces/King.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "isThreatenedByKnight(boardModel:row:col:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C1A8BF3D-1BEC-4733-ABCF-70829B3C3CAC - d28c9eb9a9c82061"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Chess.King.isThreatenedByKnight(boardModel: Chess.BoardModel, row: Swift.Int, col: Swift.Int) -&gt; Swift.Bool"
+                  moduleName = "Chess"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gabe/Documents/IOS%20Development/Chess/Chess/Chess/ChessPieces/King.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "4016">
+               </Location>
+               <Location
+                  uuid = "C1A8BF3D-1BEC-4733-ABCF-70829B3C3CAC - d28c9eb9a9c82061"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Chess.King.isThreatenedByKnight(boardModel: Chess.BoardModel, row: Swift.Int, col: Swift.Int) -&gt; Swift.Bool"
+                  moduleName = "Chess"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gabe/Documents/IOS%20Development/Chess/Chess/Chess/ChessPieces/King.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "3692">
+               </Location>
+               <Location
+                  uuid = "C1A8BF3D-1BEC-4733-ABCF-70829B3C3CAC - d28c9eb9a9c82061"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Chess.King.isThreatenedByKnight(boardModel: Chess.BoardModel, row: Swift.Int, col: Swift.Int) -&gt; Swift.Bool"
+                  moduleName = "Chess"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gabe/Documents/IOS%20Development/Chess/Chess/Chess/ChessPieces/King.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "3856">
+               </Location>
+               <Location
+                  uuid = "C1A8BF3D-1BEC-4733-ABCF-70829B3C3CAC - d28c9eb9a9c82061"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Chess.King.isThreatenedByKnight(boardModel: Chess.BoardModel, row: Swift.Int, col: Swift.Int) -&gt; Swift.Bool"
+                  moduleName = "Chess"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gabe/Documents/IOS%20Development/Chess/Chess/Chess/ChessPieces/King.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "3152">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CD8AFCB2-EFB4-422D-8C9D-E9B8DCFA81AA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Chess/ChessPieces/King.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "isThreatenedByKnight(boardModel:row:col:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CD8AFCB2-EFB4-422D-8C9D-E9B8DCFA81AA - d28c9eb9a9c82006"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Chess.King.isThreatenedByKnight(boardModel: Chess.BoardModel, row: Swift.Int, col: Swift.Int) -&gt; Swift.Bool"
+                  moduleName = "Chess"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gabe/Documents/IOS%20Development/Chess/Chess/Chess/ChessPieces/King.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "87"
+                  endingLineNumber = "87"
+                  offsetFromSymbolStart = "2384">
+               </Location>
+               <Location
+                  uuid = "CD8AFCB2-EFB4-422D-8C9D-E9B8DCFA81AA - d28c9eb9a9c82006"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Chess.King.isThreatenedByKnight(boardModel: Chess.BoardModel, row: Swift.Int, col: Swift.Int) -&gt; Swift.Bool"
+                  moduleName = "Chess"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gabe/Documents/IOS%20Development/Chess/Chess/Chess/ChessPieces/King.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "87"
+                  endingLineNumber = "87"
+                  offsetFromSymbolStart = "2688">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7C70AC70-C4E2-45A3-891C-7281CF8863EF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Chess/Models/BoardModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "init(from:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2A5F4388-362E-4DD8-A75B-CC84D400DEBB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Chess/Models/BoardModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "init(from:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

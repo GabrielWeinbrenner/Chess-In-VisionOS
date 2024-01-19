@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0010B0772B5A15DD0006A406 /* ChessListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0010B0762B5A15DD0006A406 /* ChessListView.swift */; };
+		0010B0792B5A16350006A406 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0010B0782B5A16350006A406 /* ViewModel.swift */; };
 		0028E4702B56D7DA00C9880B /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = 0028E46F2B56D7DA00C9880B /* RealityKitContent */; };
 		0028E4722B56D7DA00C9880B /* ChessApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0028E4712B56D7DA00C9880B /* ChessApp.swift */; };
-		0028E4742B56D7DA00C9880B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0028E4732B56D7DA00C9880B /* ContentView.swift */; };
+		0028E4742B56D7DA00C9880B /* ChessPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0028E4732B56D7DA00C9880B /* ChessPlayerView.swift */; };
 		0028E4762B56D7DA00C9880B /* ImmersiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0028E4752B56D7DA00C9880B /* ImmersiveView.swift */; };
 		0028E4782B56D7DA00C9880B /* ImageBasedLighting.skybox in Resources */ = {isa = PBXBuildFile; fileRef = 0028E4772B56D7DA00C9880B /* ImageBasedLighting.skybox */; };
 		0028E47A2B56D7DC00C9880B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0028E4792B56D7DC00C9880B /* Assets.xcassets */; };
@@ -18,6 +20,8 @@
 		0028E48D2B56DBB600C9880B /* SquareModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0028E48C2B56DBB600C9880B /* SquareModel.swift */; };
 		0028E48F2B56E5B400C9880B /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0028E48E2B56E5B400C9880B /* SquareView.swift */; };
 		0028E4912B56E97900C9880B /* BoardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0028E4902B56E97900C9880B /* BoardModel.swift */; };
+		00B0835B2B59BD6900606F2D /* SelectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B0835A2B59BD6900606F2D /* SelectionModel.swift */; };
+		00D64A542B5B3F790083D554 /* ChessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D64A532B5B3F790083D554 /* ChessModel.swift */; };
 		00EF58C82B583887009DFB86 /* Pawn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EF58C72B583887009DFB86 /* Pawn.swift */; };
 		00EF58CA2B583891009DFB86 /* Rook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EF58C92B583891009DFB86 /* Rook.swift */; };
 		00EF58CC2B583897009DFB86 /* Knight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EF58CB2B583897009DFB86 /* Knight.swift */; };
@@ -28,10 +32,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0010B0762B5A15DD0006A406 /* ChessListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessListView.swift; sourceTree = "<group>"; };
+		0010B0782B5A16350006A406 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		0028E46A2B56D7DA00C9880B /* Chess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0028E46E2B56D7DA00C9880B /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
 		0028E4712B56D7DA00C9880B /* ChessApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessApp.swift; sourceTree = "<group>"; };
-		0028E4732B56D7DA00C9880B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0028E4732B56D7DA00C9880B /* ChessPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessPlayerView.swift; sourceTree = "<group>"; };
 		0028E4752B56D7DA00C9880B /* ImmersiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmersiveView.swift; sourceTree = "<group>"; };
 		0028E4772B56D7DA00C9880B /* ImageBasedLighting.skybox */ = {isa = PBXFileReference; lastKnownFileType = file.skybox; path = ImageBasedLighting.skybox; sourceTree = "<group>"; };
 		0028E4792B56D7DC00C9880B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -41,6 +47,8 @@
 		0028E48C2B56DBB600C9880B /* SquareModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareModel.swift; sourceTree = "<group>"; };
 		0028E48E2B56E5B400C9880B /* SquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
 		0028E4902B56E97900C9880B /* BoardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardModel.swift; sourceTree = "<group>"; };
+		00B0835A2B59BD6900606F2D /* SelectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionModel.swift; sourceTree = "<group>"; };
+		00D64A532B5B3F790083D554 /* ChessModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessModel.swift; sourceTree = "<group>"; };
 		00EF58C72B583887009DFB86 /* Pawn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pawn.swift; sourceTree = "<group>"; };
 		00EF58C92B583891009DFB86 /* Rook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rook.swift; sourceTree = "<group>"; };
 		00EF58CB2B583897009DFB86 /* Knight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Knight.swift; sourceTree = "<group>"; };
@@ -62,6 +70,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0010B0752B5A14AA0006A406 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0028E4732B56D7DA00C9880B /* ChessPlayerView.swift */,
+				0028E4752B56D7DA00C9880B /* ImmersiveView.swift */,
+				0010B0762B5A15DD0006A406 /* ChessListView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		0028E4612B56D7DA00C9880B = {
 			isa = PBXGroup;
 			children = (
@@ -82,16 +100,16 @@
 		0028E46C2B56D7DA00C9880B /* Chess */ = {
 			isa = PBXGroup;
 			children = (
+				0010B0752B5A14AA0006A406 /* Views */,
 				00EF58C62B583870009DFB86 /* ChessPieces */,
 				0028E48B2B56DBA900C9880B /* Models */,
 				0028E4842B56DADD00C9880B /* Modules */,
 				0028E4712B56D7DA00C9880B /* ChessApp.swift */,
-				0028E4732B56D7DA00C9880B /* ContentView.swift */,
-				0028E4752B56D7DA00C9880B /* ImmersiveView.swift */,
 				0028E4772B56D7DA00C9880B /* ImageBasedLighting.skybox */,
 				0028E4792B56D7DC00C9880B /* Assets.xcassets */,
 				0028E47E2B56D7DC00C9880B /* Info.plist */,
 				0028E47B2B56D7DC00C9880B /* Preview Content */,
+				0010B0782B5A16350006A406 /* ViewModel.swift */,
 			);
 			path = Chess;
 			sourceTree = "<group>";
@@ -126,6 +144,8 @@
 			children = (
 				0028E48C2B56DBB600C9880B /* SquareModel.swift */,
 				0028E4902B56E97900C9880B /* BoardModel.swift */,
+				00B0835A2B59BD6900606F2D /* SelectionModel.swift */,
+				00D64A532B5B3F790083D554 /* ChessModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -218,15 +238,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0010B0772B5A15DD0006A406 /* ChessListView.swift in Sources */,
 				00EF58D02B5838A6009DFB86 /* Queen.swift in Sources */,
+				00B0835B2B59BD6900606F2D /* SelectionModel.swift in Sources */,
 				0028E48F2B56E5B400C9880B /* SquareView.swift in Sources */,
+				00D64A542B5B3F790083D554 /* ChessModel.swift in Sources */,
 				0028E4912B56E97900C9880B /* BoardModel.swift in Sources */,
 				0028E48D2B56DBB600C9880B /* SquareModel.swift in Sources */,
+				0010B0792B5A16350006A406 /* ViewModel.swift in Sources */,
 				00EF58CE2B58389E009DFB86 /* Bishop.swift in Sources */,
 				00EF58C82B583887009DFB86 /* Pawn.swift in Sources */,
 				00EF58CC2B583897009DFB86 /* Knight.swift in Sources */,
 				00EF58D42B583A16009DFB86 /* ChessPiece.swift in Sources */,
-				0028E4742B56D7DA00C9880B /* ContentView.swift in Sources */,
+				0028E4742B56D7DA00C9880B /* ChessPlayerView.swift in Sources */,
 				00EF58CA2B583891009DFB86 /* Rook.swift in Sources */,
 				0028E4722B56D7DA00C9880B /* ChessApp.swift in Sources */,
 				0028E4862B56DAF200C9880B /* BoardView.swift in Sources */,

@@ -8,6 +8,7 @@
 import Foundation
 
 class Pawn: ChessPiece {
+    var pieceType: ChessPieceType = .pawn
 
     
     var hasMoved: Bool = false
@@ -30,30 +31,31 @@ class Pawn: ChessPiece {
         guard let file = self.file else { return [] }
         guard let rank = self.rank else { return [] }
         if let rowCol = boardModel.convertFileRankToRowCol(file: file, rank: rank) {
-            let oneUp = (boardModel.board[rowCol.row + (direction)][rowCol.col])!
-            let twoUp = (boardModel.board[rowCol.row + (direction*2)][rowCol.col])!
-            if hasMoved == false {
-                if !oneUp.hasPiece() && !twoUp.hasPiece() {
-                    moves.append(twoUp)
+            if let oneUp = (boardModel.board[rowCol.row + (direction)][rowCol.col]), let twoUp = (boardModel.board[rowCol.row + (direction*2)][rowCol.col]) {
+                if hasMoved == false {
+                    if !oneUp.hasPiece() && !twoUp.hasPiece() {
+                        moves.append(twoUp)
+                    }
                 }
-            }
-            if !oneUp.hasPiece() {
-                moves.append(oneUp)
-            }
-            let rightUpCol = rowCol.col - 1
-            let rightUpRow = rowCol.row + direction
-            if rightUpCol >= 0, rightUpRow >= 0, rightUpRow < boardModel.board.count,
-               let rightUp = boardModel.board[rightUpRow][rightUpCol], rightUp.hasOpponentPiece(currentPlayerColor: color) {
-                moves.append(rightUp)
-            }
+                if !oneUp.hasPiece() {
+                    moves.append(oneUp)
+                }
+                let rightUpCol = rowCol.col - 1
+                let rightUpRow = rowCol.row + direction
+                if rightUpCol >= 0, rightUpRow >= 0, rightUpRow < boardModel.board.count,
+                   let rightUp = boardModel.board[rightUpRow][rightUpCol], rightUp.hasOpponentPiece(currentPlayerColor: color) {
+                    moves.append(rightUp)
+                }
 
-            let leftUpCol = rowCol.col + 1
-            let leftUpRow = rowCol.row + direction
-            if leftUpCol < boardModel.board[rowCol.row].count, leftUpRow >= 0, leftUpRow < boardModel.board.count,
-               let leftUp = boardModel.board[leftUpRow][leftUpCol], leftUp.hasOpponentPiece(currentPlayerColor: color) {
-                moves.append(leftUp)
-            }
+                let leftUpCol = rowCol.col + 1
+                let leftUpRow = rowCol.row + direction
+                if leftUpCol < boardModel.board[rowCol.row].count, leftUpRow >= 0, leftUpRow < boardModel.board.count,
+                   let leftUp = boardModel.board[leftUpRow][leftUpCol], leftUp.hasOpponentPiece(currentPlayerColor: color) {
+                    moves.append(leftUp)
+                }
 
+                
+            }
         }
         
         return moves
