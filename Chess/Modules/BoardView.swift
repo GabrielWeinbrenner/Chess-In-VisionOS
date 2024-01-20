@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BoardView: View {
 
-    var boardModel: BoardModel
+    @ObservedObject var boardModel: BoardModel
     var selectionModel: SelectionModel = SelectionModel()
     
     var body: some View {

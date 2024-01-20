@@ -9,9 +9,9 @@ import SwiftUI
 
 struct ChessPlayerView: View {
     @Environment(\.openWindow) private var openWindow
-    @EnvironmentObject var chessModel: ChessModel
+    @StateObject var chessModel: ChessModel
     var body: some View {
-        var currentBoardModel = chessModel.getCurrentBoardModel()
+        let currentBoardModel = chessModel.getCurrentBoardModel()
         VStack {
             Text("Welcome to Chess")
             if let boardModel = currentBoardModel {
@@ -34,10 +34,18 @@ struct ChessPlayerView: View {
 //                }
         }
         .dropDestination(for: BoardModel.self) { boardModels, location in
-            for boardModel in boardModels {
-                chessModel.setCurrentBoardModel(boardModel: boardModel)
+            do {
+                if let boardModel = boardModels.first {
+                    let address = Unmanaged.passUnretained(boardModel).toOpaque()
+                    print("DRAG \(address) \(boardModel.id) \(location)")
+                    try chessModel.setCurrentBoardModel(id: boardModel.id)
+                    return true
+                }
+                return false
+            } catch {
+                return false
             }
-            return true
+            
         }
 
     }

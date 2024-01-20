@@ -14,6 +14,8 @@ class ChessModel: ObservableObject {
     
     init() {
         boardModels = [
+            BoardModel(),
+            BoardModel(),
             BoardModel()
         ]
         currentBoardModel = nil
@@ -39,7 +41,22 @@ class ChessModel: ObservableObject {
     func getCurrentBoardModel() -> BoardModel? {
         return self.currentBoardModel ?? nil
     }
+    
+    func setCurrentBoardModel(id: UUID) throws{
+        for boardModel in self.boardModels {
+            if boardModel.id == id {
+                self.currentBoardModel = boardModel
+            }
+        }
+        throw ChessModelError.runtimeError("No ID Found")
+    }
+    
     func setCurrentBoardModel(boardModel: BoardModel) {
         self.currentBoardModel = boardModel
+    }
+    
+    
+    enum ChessModelError: Error {
+        case runtimeError(String)
     }
 }
