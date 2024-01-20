@@ -13,25 +13,11 @@ struct ChessPlayerView: View {
     var body: some View {
         let currentBoardModel = chessModel.getCurrentBoardModel()
         VStack {
-            Text("Welcome to Chess")
             if let boardModel = currentBoardModel {
-                BoardView(boardModel: boardModel)
+                BoardView(boardModel: boardModel, height: 60, width: 60)
             } else {
                 Text("Insert Board")
             }
-//                VStack {
-//                    Rectangle()
-//                        .frame(width: 100, height: 100)
-//                    Text("Insert Board")
-//                }
-//                .dropDestination(for: BoardModel.self) { boardModels, location in
-//
-//                    for board in boardModels {
-//                        print(board.toString())
-//                        self.boardModel = board
-//                    }
-//                    return true
-//                }
         }
         .dropDestination(for: BoardModel.self) { boardModels, location in
             do {

@@ -284,8 +284,8 @@
             filePath = "Chess/Models/BoardModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
             landmarkName = "init(from:)"
             landmarkType = "7">
          </BreakpointContent>

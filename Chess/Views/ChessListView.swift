@@ -13,28 +13,37 @@ struct ChessListView: View {
     @EnvironmentObject var chessModel: ChessModel
     var body: some View {
         let boardModels = chessModel.getBoardModels()
+        
         VStack(alignment: .leading) {
-            ForEach(boardModels, id: \.self) { board in
-                Text("\(board.id)")
-                    .padding(12)
-                    .cornerRadius(8)
-                    .shadow(radius: 1, x: 1, y: 1)
-                    .draggable(board.self, preview: {
-                        BoardView(boardModel: board)
-                    })
-                    .onTapGesture {
-                        let address = Unmanaged.passUnretained(board).toOpaque()
-                        print("CLICK \(address) \(board.id)")
-                        chessModel.setCurrentBoardModel(boardModel: board)
+            Text("Chess Games")
+                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+            ScrollView(showsIndicators: false) {
+                Grid() {
+                    ForEach(boardModels, id: \.self) { boardModel in
+                        ChessListItemView(boardModel: boardModel)
+                        .draggable(boardModel.self, preview: {
+                            BoardView(boardModel: boardModel, height: 100, width: 100, isPreview: true)
+                        })
+                        .onTapGesture {
+                            let address = Unmanaged.passUnretained(boardModel).toOpaque()
+                            print("CLICK \(address) \(boardModel.id)")
+                            chessModel.setCurrentBoardModel(boardModel: boardModel)
+                       }
                     }
+                    
+                }
             }
         }
-            .onAppear() {
-                openWindow(id: "ChessPlayerView")
-            }
+        .padding(EdgeInsets(top: 20, leading: 20, bottom: 0, trailing: 20))
+        .onAppear() {
+            openWindow(id: "ChessPlayerView")
+        }
     }
 }
 
-//#Preview {
-//    ChessListView()
-//}
+var chessModel = ChessModel()
+#Preview {
+    ChessListView()
+        .environmentObject(chessModel)
+}
+

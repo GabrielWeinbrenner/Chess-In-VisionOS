@@ -94,8 +94,9 @@ class BoardModel: ObservableObject, Codable, Identifiable, Observable  {
     var playerOne: Player
     var playerTwo: Player
     @Published var gameFinished: Bool = false
+    var boardMoves: [BoardMove] = []
     enum CodingKeys: CodingKey {
-        case id, board, currentPlayer, playerOne, playerTwo, gameFinished
+        case id, board, currentPlayer, playerOne, playerTwo, gameFinished, boardMoves
     }
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
@@ -105,6 +106,7 @@ class BoardModel: ObservableObject, Codable, Identifiable, Observable  {
         try container.encode(playerOne, forKey: .playerOne)
         try container.encode(playerTwo, forKey: .playerTwo)
         try container.encode(gameFinished, forKey: .gameFinished)
+        try container.encode(boardMoves, forKey: .boardMoves)
     }
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
@@ -114,6 +116,7 @@ class BoardModel: ObservableObject, Codable, Identifiable, Observable  {
         playerOne = try container.decode(Player.self, forKey: .playerOne)
         playerTwo = try container.decode(Player.self, forKey: .playerTwo)
         gameFinished = try container.decode(Bool.self, forKey: .gameFinished)
+        boardMoves = try container.decode([BoardMove].self, forKey: .boardMoves)
     }
 
 
@@ -205,7 +208,10 @@ class BoardModel: ObservableObject, Codable, Identifiable, Observable  {
                         gameFinished = true
                     }
                 }
+                var playerMove: Player = currentPlayer == .black ? playerTwo : playerOne
+                var newMove: BoardMove = BoardMove(firstMove: firstSpot, secondMove: secondSpot, player: playerMove)
                 changePlayer()
+                boardMoves.append(newMove)
                 return true
             } else {
                 return false

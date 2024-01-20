@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct BoardMoveView: View {
+    var boardMove: BoardMove
+    var moveNumber: Int
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            Text("Move: \(moveNumber)")
+            Text("\(boardMove.firstMove.file)\(boardMove.firstMove.rank) to \(boardMove.secondMove.file)\(boardMove.secondMove.rank)")
+            Text(boardMove.player.playerColor == .black ? "Black" : "White")
+        }
     }
 }
 
-#Preview {
-    BoardMoveView()
-}

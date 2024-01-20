@@ -12,23 +12,25 @@ let WHITE_SQUARE: Color = Color(red: CGFloat(238.0/255.0), green: CGFloat(238.0/
 struct SquareView: View {
     var squareModel: SquareModel
     var boardModel: BoardModel
+    var height: CGFloat
+    var width: CGFloat
     @ObservedObject var selectionModel: SelectionModel
     var body: some View {
         return ZStack {
             Rectangle()
                 .fill(squareModel.color == .black ? BLACK_SQUARE : WHITE_SQUARE)
                 .border(selectionModel.contains(squareModel: squareModel) ? Color.red : Color.gray, width: 1)
-                .frame(width: 60, height: 60)
+                .frame(width: width, height: height)
             if let chessPiece = squareModel.chessPiece {
                 Image(chessPiece.toString())
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 60, height: 60, alignment: .center)
+                    .frame(width: width, height: height, alignment: .center)
                     .clipped()
             }
             if squareModel.availableMove {
                 Image(systemName: "circle.fill")
-                    .font(.system(size: 40, weight: .light))
+                    .font(.system(size: 0.66*height, weight: .light))
                     .foregroundColor(.white)
                     .imageScale(.small)
             }
@@ -36,6 +38,13 @@ struct SquareView: View {
             print("\(squareModel.toString())")
             selectionModel.select(squareModel: squareModel, boardModel: boardModel)
         })
+    }
+    init(squareModel: SquareModel, boardModel: BoardModel, height: CGFloat, width: CGFloat, selectionModel: SelectionModel) {
+        self.squareModel = squareModel
+        self.boardModel = boardModel
+        self.height = height
+        self.width = width
+        self.selectionModel = selectionModel
     }
 }
 

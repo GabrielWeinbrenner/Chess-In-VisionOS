@@ -7,12 +7,35 @@
 
 import SwiftUI
 
-struct ChessListView: View {
+struct ChessListItemView: View {
+    @StateObject var boardModel: BoardModel
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            GridRow() {
+                VStack(alignment: .leading, content: {
+                    BoardView(boardModel: boardModel, height: 20, width: 20, isPreview: true)
+                })
+                VStack(alignment: .leading, spacing: 2){
+                    Text("\(boardModel.id)")
+                        .cornerRadius(8)
+                        .shadow(radius: 1, x: 1, y: 1)
+                        .font(.title)
+                    Text("Moves: ")
+                        .cornerRadius(8)
+                        .shadow(radius: 1, x: 1, y: 1)
+                        .font(.subheadline)
+                    Text("Date: ")
+                        .cornerRadius(8)
+                        .shadow(radius: 1, x: 1, y: 1)
+                        .font(.subheadline)
+                }
+                .padding(.leading, 7.0)
+        }
     }
 }
 
+
+var boardModel = BoardModel()
 #Preview {
-    ChessListView()
+    ChessListItemView(boardModel: boardModel)
 }
+
