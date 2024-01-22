@@ -114,6 +114,11 @@ class SquareModel: Identifiable, Equatable, ObservableObject, Codable {
         if self.chessPiece?.color == currentPlayerColor { return false }
         return true
     }
+    
+    func getCoordinates() -> String {
+        return "\(self.file)\(self.rank)"
+    }
+        
     func toString() -> String {
         return "(\(self.file), \(self.rank)) has a \(self.chessPiece?.toString() ?? "None") piece"
     }

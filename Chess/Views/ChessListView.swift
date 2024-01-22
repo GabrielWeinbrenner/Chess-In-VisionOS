@@ -11,10 +11,17 @@ struct ChessListView: View {
     
     @Environment(\.openWindow) private var openWindow
     @EnvironmentObject var chessModel: ChessModel
+    
+    @State var showImmersiveSpace = false
+    @Environment(\.openImmersiveSpace) var openImmersiveSpace
+    @Environment(\.dismissImmersiveSpace) var dismissImmersiveSpace
+    
     var body: some View {
         let boardModels = chessModel.getBoardModels()
         
         VStack(alignment: .leading) {
+            Toggle("Show Immersion", isOn: $showImmersiveSpace)
+                .toggleStyle(.button)
             Text("Chess Games")
                 .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
             ScrollView(showsIndicators: false) {
@@ -30,20 +37,33 @@ struct ChessListView: View {
                             chessModel.setCurrentBoardModel(boardModel: boardModel)
                        }
                     }
-                    
                 }
             }
         }
         .padding(EdgeInsets(top: 20, leading: 20, bottom: 0, trailing: 20))
+        .onChange(of: showImmersiveSpace) { _, newValue in
+            Task {
+                if newValue {
+                    await openImmersiveSpace(id: "ImmersiveSpace")
+                } else {
+                    await dismissImmersiveSpace()
+                }
+            }
+        }
         .onAppear() {
             openWindow(id: "ChessPlayerView")
+        }
+        .toolbar {
+            ToolbarItemGroup(placement: .bottomOrnament) {
+                ChessControlView()
+            }
         }
     }
 }
 
-var chessModel = ChessModel()
-#Preview {
-    ChessListView()
-        .environmentObject(chessModel)
-}
+//var chessModel = ChessModel()
+//#Preview {
+//    ChessListView()
+//        .environmentObject(chessModel)
+//}
 

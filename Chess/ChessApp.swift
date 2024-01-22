@@ -10,7 +10,14 @@ import SwiftUI
 //import RealityKitContent
 @main
 struct ChessApp: App {
-    @StateObject var chessModel: ChessModel = ChessModel()
+    var chessModel: ChessModel = ChessModel()
+    var chess3DViewModel: Chess3DViewModel
+    init() {
+        let model = ChessModel()
+        chessModel = model
+        chess3DViewModel = Chess3DViewModel(boardModel: chessModel.getCurrentBoardModel())
+       
+    }
     var body: some Scene {
         WindowGroup("Chess Games", id: "ChessListView") {
             ChessListView()
@@ -18,7 +25,11 @@ struct ChessApp: App {
         }
         
         WindowGroup("Chess Player", id: "ChessPlayerView", for: BoardModel.self) { $board in
-                ChessPlayerView(chessModel: chessModel)
+            ChessPlayerView(chessModel: chessModel)
+        }
+        
+        ImmersiveSpace(id: "ImmersiveSpace") {
+            ImmersiveView(chess3DViewModel: chess3DViewModel)
         }
     }
 }

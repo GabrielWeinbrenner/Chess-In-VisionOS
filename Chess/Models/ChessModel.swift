@@ -10,15 +10,16 @@ import Foundation
 class ChessModel: ObservableObject {
     
     @Published var boardModels: [BoardModel]
-    @Published var currentBoardModel: BoardModel?
+    @Published var currentBoardModel: BoardModel
     
     init() {
+        let newBoardModel = BoardModel()
         boardModels = [
-            BoardModel(),
             BoardModel(),
             BoardModel()
         ]
-        currentBoardModel = nil
+        currentBoardModel = newBoardModel
+        boardModels.append(newBoardModel)
     }
     
     func getBoardModels() -> [BoardModel] {
@@ -38,8 +39,8 @@ class ChessModel: ObservableObject {
         return boardModels[Int.random(in: 0..<boardModels.count)]
     }
     
-    func getCurrentBoardModel() -> BoardModel? {
-        return self.currentBoardModel ?? nil
+    func getCurrentBoardModel() -> BoardModel {
+        return self.currentBoardModel
     }
     
     func setCurrentBoardModel(id: UUID) throws{

@@ -6,18 +6,20 @@
 //
 
 import SwiftUI
+import RealityKit
 
 struct ChessPlayerView: View {
     @Environment(\.openWindow) private var openWindow
-    @StateObject var chessModel: ChessModel
+    var chessModel: ChessModel
+    @ObservedObject var currentBoardModel: BoardModel
+    init(chessModel: ChessModel) {
+        self.chessModel = chessModel
+        let boardModel = chessModel.currentBoardModel
+        currentBoardModel = boardModel
+    }
     var body: some View {
-        let currentBoardModel = chessModel.getCurrentBoardModel()
         VStack {
-            if let boardModel = currentBoardModel {
-                BoardView(boardModel: boardModel, height: 60, width: 60)
-            } else {
-                Text("Insert Board")
-            }
+            BoardView(boardModel: currentBoardModel, height: 60, width: 60)
         }
         .dropDestination(for: BoardModel.self) { boardModels, location in
             do {
@@ -35,4 +37,5 @@ struct ChessPlayerView: View {
         }
 
     }
+    
 }
