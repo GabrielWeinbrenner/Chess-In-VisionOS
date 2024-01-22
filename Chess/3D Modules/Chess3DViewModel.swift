@@ -46,7 +46,7 @@ class Chess3DViewModel: ObservableObject {
                         boardVisual[row][col] = chessCubeEntity
                         if let chessPiece = squareModel.chessPiece {
                             let chessPieceEntity = createChessPieceEntity(chessPiece: chessPiece)
-                            cmessCubeEntity.addChild(chessPieceEntity)
+                            chessCubeEntity.addChild(chessPieceEntity)
                         }
                     }
                     
