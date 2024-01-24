@@ -17,10 +17,18 @@ class Chess3DViewModel: ObservableObject {
     var width: Float = 0.2
     var depth: Float = 0.2
     var selectionModel: SelectionModel = SelectionModel()
+    var chessPieces: Entity
     init(boardModel: BoardModel) {
         boardVisual = Array(repeating: Array(repeating: Entity(), count: 8), count: 8)
         chessPieceVisual = []
         self.boardModel = boardModel
+//        let chessPiecesEntity = try await Entity(named: "ChessPiecesModel")
+        if let chessPiecesEntity = try? ModelEntity.load(named: "ChessPiecesModel") {
+            self.chessPieces = chessPiecesEntity
+        } else {
+            self.chessPieces = ModelEntity(mesh: MeshResource.generateBox(width: self.width*0.02, height: self.height*1.1, depth: self.depth*0.02))
+
+        }
         self.boardEntity = Entity()
     }
     func renderBoardEntity() {
@@ -46,7 +54,9 @@ class Chess3DViewModel: ObservableObject {
                         boardVisual[row][col] = chessCubeEntity
                         if let chessPiece = squareModel.chessPiece {
                             let chessPieceEntity = createChessPieceEntity(chessPiece: chessPiece)
+                            chessPieceEntity.position.y = depth/2
                             chessCubeEntity.addChild(chessPieceEntity)
+                            chessPieceVisual.append(chessPieceEntity)
                         }
                     }
                     
@@ -59,30 +69,25 @@ class Chess3DViewModel: ObservableObject {
         
     }
     func createChessPieceEntity(chessPiece: ChessPiece) -> Entity{
-        var newModelEntity: ModelEntity
-        
-        switch chessPiece.pieceType {
-        case .pawn:
-            newModelEntity = ModelEntity(mesh: MeshResource.generateCylinder(height: 0.2, radius: 0.03))
-        case .knight:
-            newModelEntity = ModelEntity(mesh: MeshResource.generateCylinder(height: 0.3, radius: 0.03))
-        case .bishop:
-            newModelEntity = ModelEntity(mesh: MeshResource.generateCylinder(height: 0.3, radius: 0.03))
-        case .rook:
-            newModelEntity = ModelEntity(mesh: MeshResource.generateCylinder(height: 0.4, radius: 0.03))
-        case .king:
-            newModelEntity = ModelEntity(mesh: MeshResource.generateCylinder(height: 0.5, radius: 0.03))
-        case .queen:
-            newModelEntity = ModelEntity(mesh: MeshResource.generateCylinder(height: 0.5, radius: 0.03))
+        var newEntity: Entity = Entity()
+        let widthScale = Float(0.2)
+        let depthScale = Float(0.2)
+        let universalScale = Float(0.02)
+        let entityName = chessPiece.pieceType.toString()
+        if let pieceEntity: Entity = self.chessPieces.findEntity(named: entityName){
+            newEntity = pieceEntity.clone(recursive: true)
+            pieceEntity.transform.translation = .init(repeating: 0)
+            let newScale: SIMD3<Float> = .init(x: widthScale*universalScale, y: depthScale*universalScale, z: depthScale*universalScale)
+            newEntity.scale = newScale
+            let collisionComponent = CollisionComponent(shapes: [.generateBox(size: .init(x: width, y: height, z: depth))])
+            newEntity.components.set(collisionComponent)
+            newEntity.components.set(InputTargetComponent())
         }
-        let collisionComponent = CollisionComponent(shapes: [ShapeResource.generateBox(width: self.width, height: self.height, depth: self.depth)])
-        newModelEntity.components.set(collisionComponent)
-        newModelEntity.components.set(InputTargetComponent())
-
-        newModelEntity.model?.materials = [SimpleMaterial(color: chessPiece.color == .black ? .black : .white, isMetallic: false)]
-        newModelEntity.name = chessPiece.toString()
+        var newEntityModel = newEntity.children[0] as! ModelEntity
+        newEntityModel.model?.materials = [SimpleMaterial(color: chessPiece.color == .black ? .black : .white, isMetallic: false)]
+        newEntityModel.name = chessPiece.toString()
         
-        return newModelEntity
+        return newEntity
     }
 
 }

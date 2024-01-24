@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import RealityKit
 struct ChessListView: View {
     
     @Environment(\.openWindow) private var openWindow
@@ -18,7 +18,6 @@ struct ChessListView: View {
     
     var body: some View {
         let boardModels = chessModel.getBoardModels()
-        
         VStack(alignment: .leading) {
             Toggle("Show Immersion", isOn: $showImmersiveSpace)
                 .toggleStyle(.button)

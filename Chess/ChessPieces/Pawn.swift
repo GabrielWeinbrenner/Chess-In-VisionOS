@@ -31,6 +31,7 @@ class Pawn: ChessPiece {
         guard let file = self.file else { return [] }
         guard let rank = self.rank else { return [] }
         if let rowCol = boardModel.convertFileRankToRowCol(file: file, rank: rank) {
+            // Getting fatal error here
             if let oneUp = (boardModel.board[rowCol.row + (direction)][rowCol.col]), let twoUp = (boardModel.board[rowCol.row + (direction*2)][rowCol.col]) {
                 if hasMoved == false {
                     if !oneUp.hasPiece() && !twoUp.hasPiece() {

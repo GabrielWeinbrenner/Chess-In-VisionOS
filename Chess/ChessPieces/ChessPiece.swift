@@ -27,7 +27,6 @@ protocol ChessPiece: Codable {
 
 enum ChessPieceType: String, Codable {
     case pawn, knight, bishop, rook, queen, king
-    
     var metatype: ChessPiece.Type {
         switch self {
         case .bishop:
@@ -44,5 +43,23 @@ enum ChessPieceType: String, Codable {
             return Rook.self
             
         }
+    }
+    func toString() -> String {
+        switch self {
+        case .bishop:
+            return "Bishop"
+        case .king:
+            return "King"
+        case .knight:
+            return "Knight"
+        case .pawn:
+            return "Pawn"
+        case .queen:
+            return "Queen"
+        case .rook:
+            return "Rook"
+            
+        }
+
     }
 }

@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import RealityKit
 struct BoardView: View {
 
     @ObservedObject var boardModel: BoardModel
