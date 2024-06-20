@@ -10,12 +10,13 @@ import SwiftUI
 //import RealityKitContent
 @main
 struct ChessApp: App {
-    var chessModel: ChessModel = ChessModel()
+    @ObservedObject var chessModel: ChessModel = ChessModel()
     var chess3DViewModel: Chess3DViewModel
     init() {
         let model = ChessModel()
         chessModel = model
-        chess3DViewModel = Chess3DViewModel(boardModel: chessModel.getCurrentBoardModel())
+        boardModel = model.getCurrentBoardModel()
+        chess3DViewModel = Chess3DViewModel(boardModel: boardModel )
        
     }
     var body: some Scene {

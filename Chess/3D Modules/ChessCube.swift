@@ -18,7 +18,7 @@ class ChessCube {
     var depth: Float
     var squareModel: SquareModel
     var selectionModel: SelectionModel
-    var chessCubeEntity: Entity?
+    var chessCubeEntity: ModelEntity?
     
     init(height: Float, width: Float, depth: Float, squareModel: SquareModel, selectionModel: SelectionModel) {
         self.height = height
@@ -29,7 +29,7 @@ class ChessCube {
         self.chessCubeEntity = createBoardCube()
     }
     
-    func createBoardCube() -> Entity? {
+    func createBoardCube() -> ModelEntity? {
         // Split the faces
         let cubeMesh = MeshResource.generateBox(width: self.width, height: self.height, depth: self.depth, splitFaces: true)
 

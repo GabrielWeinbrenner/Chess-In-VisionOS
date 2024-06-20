@@ -175,8 +175,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "90"
-                  endingLineNumber = "90"
-                  offsetFromSymbolStart = "4016">
+                  endingLineNumber = "90">
                </Location>
                <Location
                   uuid = "C1A8BF3D-1BEC-4733-ABCF-70829B3C3CAC - d28c9eb9a9c82061"
@@ -190,8 +189,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "90"
-                  endingLineNumber = "90"
-                  offsetFromSymbolStart = "3692">
+                  endingLineNumber = "90">
                </Location>
                <Location
                   uuid = "C1A8BF3D-1BEC-4733-ABCF-70829B3C3CAC - d28c9eb9a9c82061"
@@ -205,8 +203,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "90"
-                  endingLineNumber = "90"
-                  offsetFromSymbolStart = "3856">
+                  endingLineNumber = "90">
                </Location>
                <Location
                   uuid = "C1A8BF3D-1BEC-4733-ABCF-70829B3C3CAC - d28c9eb9a9c82061"
@@ -220,8 +217,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "90"
-                  endingLineNumber = "90"
-                  offsetFromSymbolStart = "3152">
+                  endingLineNumber = "90">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -253,8 +249,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "87"
-                  endingLineNumber = "87"
-                  offsetFromSymbolStart = "2384">
+                  endingLineNumber = "87">
                </Location>
                <Location
                   uuid = "CD8AFCB2-EFB4-422D-8C9D-E9B8DCFA81AA - d28c9eb9a9c82006"
@@ -268,8 +263,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "87"
-                  endingLineNumber = "87"
-                  offsetFromSymbolStart = "2688">
+                  endingLineNumber = "87">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -304,22 +298,6 @@
             endingLineNumber = "60"
             landmarkName = "init(from:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2DDC9B0E-7868-456C-8EE7-03694414954F"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Chess/Views/ImmersiveView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "body"
-            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -364,8 +342,8 @@
             filePath = "Chess/Views/ImmersiveView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -380,10 +358,164 @@
             filePath = "Chess/Views/ImmersiveView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "body"
             landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AA1C7004-ADFD-4332-93C9-D9677C367F58"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Chess/Views/ImmersiveView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "AA1C7004-ADFD-4332-93C9-D9677C367F58 - 4d7661b909004a2d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Swift.MainActor @Sendable (inout _RealityKit_SwiftUI.RealityViewContent) async -&gt; () in Chess.ImmersiveView.body.getter : some"
+                  moduleName = "Chess"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gabe/Documents/IOS%20Development/Chess/Chess/Chess/Views/ImmersiveView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25">
+               </Location>
+               <Location
+                  uuid = "AA1C7004-ADFD-4332-93C9-D9677C367F58 - 4d7661b909004a2d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Swift.MainActor @Sendable (inout _RealityKit_SwiftUI.RealityViewContent) async -&gt; () in Chess.ImmersiveView.body.getter : some"
+                  moduleName = "Chess"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gabe/Documents/IOS%20Development/Chess/Chess/Chess/Views/ImmersiveView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "77B4907D-90DC-447E-A3E2-1CC4F16DD25E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Chess/3D Modules/Chess3DViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "changePosition(value:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "77B4907D-90DC-447E-A3E2-1CC4F16DD25E - bbf9baf42d05d52f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Chess.Chess3DViewModel.changePosition(value: _RealityKit_SwiftUI.EntityTargetValue&lt;SwiftUI.SpatialTapGesture.Value&gt;) -&gt; ()"
+                  moduleName = "Chess"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gabe/Documents/IOS%20Development/Chess/Chess/Chess/3D%20Modules/Chess3DViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68">
+               </Location>
+               <Location
+                  uuid = "77B4907D-90DC-447E-A3E2-1CC4F16DD25E - e4f6071749ea705d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Chess.Chess3DViewModel.changePosition(value: __C.SPPoint3D) -&gt; ()"
+                  moduleName = "Chess"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gabe/Documents/IOS%20Development/Chess/Chess/Chess/3D%20Modules/Chess3DViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0A4243BD-A16C-414F-9544-4CAB93E84DA7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Chess/3D Modules/Chess3DViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "changePosition(value:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "324327D5-EEFA-46FE-AB40-8FC3AA4E2CA8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Chess/Views/ImmersiveView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "324327D5-EEFA-46FE-AB40-8FC3AA4E2CA8 - 65e4f55aaaa6ff61"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 (_RealityKit_SwiftUI.EntityTargetValue&lt;SwiftUI.SpatialTapGesture.Value&gt;) -&gt; () in Chess.ImmersiveView.body.getter : some"
+                  moduleName = "Chess"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gabe/Documents/IOS%20Development/Chess/Chess/Chess/Views/ImmersiveView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42">
+               </Location>
+               <Location
+                  uuid = "324327D5-EEFA-46FE-AB40-8FC3AA4E2CA8 - 84303ddbf6417785"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 (SwiftUI.SpatialTapGesture.Value) -&gt; () in Chess.ImmersiveView.body.getter : some"
+                  moduleName = "Chess"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gabe/Documents/IOS%20Development/Chess/Chess/Chess/Views/ImmersiveView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

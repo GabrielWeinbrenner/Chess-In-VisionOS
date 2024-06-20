@@ -11,7 +11,7 @@ import RealityKit
 struct ChessPlayerView: View {
     @Environment(\.openWindow) private var openWindow
     var chessModel: ChessModel
-    @ObservedObject var currentBoardModel: BoardModel
+    var currentBoardModel: BoardModel
     init(chessModel: ChessModel) {
         self.chessModel = chessModel
         let boardModel = chessModel.currentBoardModel

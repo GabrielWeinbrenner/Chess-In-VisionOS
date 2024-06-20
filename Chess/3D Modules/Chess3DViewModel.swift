@@ -22,7 +22,6 @@ class Chess3DViewModel: ObservableObject {
         boardVisual = Array(repeating: Array(repeating: Entity(), count: 8), count: 8)
         chessPieceVisual = []
         self.boardModel = boardModel
-//        let chessPiecesEntity = try await Entity(named: "ChessPiecesModel")
         if let chessPiecesEntity = try? ModelEntity.load(named: "ChessPiecesModel") {
             self.chessPieces = chessPiecesEntity
         } else {
@@ -64,7 +63,11 @@ class Chess3DViewModel: ObservableObject {
             }
         }
     }
-    
+    func changePosition(value: Point3D) {
+//        if let boardEntity = self.boardEntity {
+        self.boardEntity.position = .init(x: Float(value.x), y: Float(value.y), z: Float(value.z))
+//        }
+    }
     func moveChessPieceEntity(chessPiece: ChessPiece) {
         
     }
