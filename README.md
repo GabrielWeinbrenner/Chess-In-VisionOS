@@ -1,6 +1,6 @@
 # ♟️ Chess App ♟️
 
-This repository contains the source code for a Chess application developed in Swift using SwiftUI. The application features a fully functional chess board, complete with player management, move validation, and game state tracking.
+A Chess application developed in Swift using SwiftUI for the Apple Visiion Pro. The application features a fully functional chess board, complete with player management, move validation, and game state tracking.
 
 ## Features ✨
 
