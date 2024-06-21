@@ -1,6 +1,12 @@
 # ♟️ Chess App ♟️
 
-A Chess application developed in Swift using SwiftUI for the Apple Visiion Pro. The application features a fully functional chess board, complete with player management, move validation, and game state tracking.
+A Chess application developed in Swift using SwiftUI for the Apple Vision Pro. The application features a fully functional chess board, complete with player management, move validation, and game state tracking.
+
+## Screenshots 📸
+<img src="https://github.com/GabrielWeinbrenner/Chess-In-VisionOS/assets/13935725/f4d17542-273f-4338-8717-1cdb1ccecd3e" width=400 />
+<img src="https://github.com/GabrielWeinbrenner/Chess-In-VisionOS/assets/13935725/357c7687-000a-44c8-82d4-aa6cb5ce5726" width=400 />
+<img src="https://github.com/GabrielWeinbrenner/Chess-In-VisionOS/assets/13935725/ea066ad0-e38b-4ceb-8902-df6311b76c96" width=400 />
+<img src="https://github.com/GabrielWeinbrenner/Chess-In-VisionOS/assets/13935725/708a4cba-3dca-460a-a9af-92197f84d81b" width=400 />
 
 ## Features ✨
 
@@ -59,13 +65,6 @@ open ChessApp.xcodeproj
 
 ## Usage 🎮
 Once the application is running, you can start a new game of chess by following the standard chess rules. The application supports move validation, turn-based play, and game state tracking.
-
-## Screenshots 📸
-
-![2024-06-20 at 22 58 31@2x](https://github.com/GabrielWeinbrenner/Chess-In-VisionOS/assets/13935725/f4d17542-273f-4338-8717-1cdb1ccecd3e)
-![2024-06-20 at 22 59 05@2x](https://github.com/GabrielWeinbrenner/Chess-In-VisionOS/assets/13935725/357c7687-000a-44c8-82d4-aa6cb5ce5726)
-
-
 
 ## Contributing 🤝
 Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
