@@ -62,6 +62,8 @@ Once the application is running, you can start a new game of chess by following 
 
 ## Screenshots 📸
 
+![2024-06-20 at 22 58 31@2x](https://github.com/GabrielWeinbrenner/Chess-In-VisionOS/assets/13935725/f4d17542-273f-4338-8717-1cdb1ccecd3e)
+![2024-06-20 at 22 59 05@2x](https://github.com/GabrielWeinbrenner/Chess-In-VisionOS/assets/13935725/357c7687-000a-44c8-82d4-aa6cb5ce5726)
 
 
 
